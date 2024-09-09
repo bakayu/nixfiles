@@ -1,0 +1,1 @@
+# NixOS dot files
