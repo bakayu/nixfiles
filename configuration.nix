@@ -299,6 +299,7 @@
     vivaldi-ffmpeg-codecs
     obs-studio
     element-desktop
+    whatsapp-for-linux
     vesktop
     gradience
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.

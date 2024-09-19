@@ -11,6 +11,7 @@
     app-icons-taskbar
     appindicator
     just-perfection
+    color-picker
     forge
     # ...
   ];
