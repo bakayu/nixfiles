@@ -377,8 +377,10 @@
     obsidian
     libreoffice-qt6-fresh
     libsForQt5.qt5ct
+    onlyoffice-bin
     vscode
     osu-lazer
+    hub
   ];  
 
 
