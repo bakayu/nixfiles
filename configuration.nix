@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ lib, config, pkgs, pkgs-unstable, inputs, ... }:
+{ lib, config, pkgs, pkgs-unstable, inputs,... }:
 
 {
   imports =
@@ -11,6 +11,7 @@
       # inputs.home-manager.nixosModules.default
       ./battery.nix
       ./gnome-extensions.nix
+      ./vscode.nix
     ];
 
   # enable flakes
@@ -90,6 +91,9 @@
     nvidiaSettings = true;
 
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
+
+    # package = config.boot.kernelPackages.nvidiaPackages.beta;
+
     package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
       version = "555.58.02";
       sha256_64bit = "sha256-xctt4TPRlOJ6r5S54h5W6PT6/3Zy2R4ASNFPu8TSHKM=";
@@ -268,6 +272,7 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+
   environment.sessionVariables = {
     FLAKE = "/home/bakayu/nixfiles";
     STEAM_EXTRA_COMPAT_TOOLS_PATHS =
@@ -378,9 +383,10 @@
     libreoffice-qt6-fresh
     libsForQt5.qt5ct
     onlyoffice-bin
-    vscode
     osu-lazer
     hub
+    gh
+    jq
   ];  
 
 
