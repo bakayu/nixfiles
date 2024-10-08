@@ -387,6 +387,10 @@
     hub
     gh
     jq
+    jetbrains-toolbox
+    pkgs-unstable.eyewitness
+    pkgs-unstable.nmap
+    pkgs-unstable.ffuf
   ];  
 
 

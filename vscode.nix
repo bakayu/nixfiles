@@ -1,15 +1,9 @@
-{lib, pkgs}:
-let
-unstable = import <nixos-unstable> { config.allowUnfree = true; };
-in
+{ pkgs, lib, ... }:
 {
-nixpkgs.config = {
-  allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "vscode"
-    ];
-
-    packageOverrides = pkgs: {
-      vscode = unstable.vscode;
-    };
-  };
+  ];
+  environment.systemPackages = with pkgs; [ 
+    vscode
+  ];
 }
