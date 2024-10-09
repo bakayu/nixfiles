@@ -24,7 +24,7 @@
 
 	pkgs-unstable = import nixpkgs-unstable {
 	  inherit system;
-	  config.allowedUnfree = true;
+	  config.allowUnfree = true;
 	};
       };
       modules = [

@@ -3,7 +3,7 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { lib, config, pkgs, pkgs-unstable, inputs,... }:
-
+ 
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -11,7 +11,6 @@
       # inputs.home-manager.nixosModules.default
       ./battery.nix
       ./gnome-extensions.nix
-      ./vscode.nix
     ];
 
   # enable flakes
@@ -295,6 +294,7 @@
     mangohud
     protonup
     pkgs-unstable.neovim
+    pkgs-unstable.vscode
     kitty
     alacritty
     wezterm
@@ -304,6 +304,7 @@
     vivaldi-ffmpeg-codecs
     obs-studio
     element-desktop
+    slack
     whatsapp-for-linux
     vesktop
     gradience
