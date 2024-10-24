@@ -204,6 +204,7 @@
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
     stdenv.cc.cc
+    glib
   ];
 
   # change shell to zsh
@@ -295,6 +296,8 @@
     protonup
     pkgs-unstable.neovim
     pkgs-unstable.vscode
+    bootstrap-studio
+    pkgs-unstable.ollama-cuda
     kitty
     alacritty
     wezterm
@@ -324,11 +327,22 @@
     lldb
     clang
     clang-tools
+    opencv
+    gtk3
     llvmPackages.libcxxClang
     llvmPackages.libclc
+    chromedriver
+    chromium
+    libglibutil
+    glib
+    glibc
+    nss
+    nspr
+    xcbuild
     nodejs_22
     go
     gopls
+    zig
     nil
     lazygit
     git-credential-oauth
