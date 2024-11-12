@@ -208,8 +208,12 @@
   ];
 
   # change shell to zsh
-  programs.zsh.enable = true;
-  users.defaultUserShell = pkgs.zsh;  
+  # programs.zsh.enable = true;
+  # users.defaultUserShell = pkgs.zsh;  
+  
+  # change shell to nushell
+  # programs.nushell.enable = true;
+  users.defaultUserShell = pkgs.nushell;  
 
   # enabling git
   programs.git = {
@@ -255,7 +259,12 @@
     packages = with pkgs; [
     #  thunderbird
     ];
+    shell = pkgs.nushell;
   };
+
+  environment.shells = [
+    pkgs.nushell
+  ];
 
 
   # home-manager
@@ -296,8 +305,10 @@
     protonup
     pkgs-unstable.neovim
     pkgs-unstable.vscode
+    direnv
     bootstrap-studio
     pkgs-unstable.ollama-cuda
+    azure-cli
     kitty
     alacritty
     wezterm
@@ -309,6 +320,7 @@
     element-desktop
     slack
     whatsapp-for-linux
+    beeper
     vesktop
     gradience
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
@@ -342,6 +354,7 @@
     nodejs_22
     go
     gopls
+    rustup
     zig
     nil
     lazygit
@@ -364,6 +377,8 @@
     pkgs-unstable.spicetify-cli
     xclip
     zsh
+    pkgs-unstable.nushell
+    carapace
     fzf
     eza
     zoxide
@@ -426,6 +441,9 @@
     noto-fonts-color-emoji
     noto-fonts-emoji-blob-bin
     noto-fonts-monochrome-emoji
+    helvetica-neue-lt-std
+    gelasio
+    caladea
 
     # Nerd fonts
     fantasque-sans-mono
