@@ -29,7 +29,7 @@
         };
       modules = [
         # config file for default host (epheotus)
-        ./configuration.nix
+        ./hosts/default/configuration.nix
         # inputs.home-manager.nixosModules.default
       ];
     };
