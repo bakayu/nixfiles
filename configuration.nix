@@ -2,11 +2,12 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ lib, config, pkgs, pkgs-unstable, inputs,... }:
- 
+{ lib, config, pkgs, pkgs-unstable, inputs, ... }:
+
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
       # inputs.home-manager.nixosModules.default
       ./battery.nix
@@ -20,17 +21,17 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
 
-#  # Bootloader.
-#  boot.loader.systemd-boot.enable = true;
-#  boot.loader.efi.canTouchEfiVariables = true;
+  #  # Bootloader.
+  #  boot.loader.systemd-boot.enable = true;
+  #  boot.loader.efi.canTouchEfiVariables = true;
 
-# enabling grub
+  # enabling grub
   boot.loader = {
     grub = {
-	enable = true;
-	device = "nodev";
-	useOSProber = true;
-	efiSupport = true;
+      enable = true;
+      device = "nodev";
+      useOSProber = true;
+      efiSupport = true;
     };
     efi.canTouchEfiVariables = true;
   };
@@ -50,16 +51,16 @@
     driSupport = true;
     driSupport32Bit = true;
     extraPackages = with pkgs; [
-      vaapiVdpau	
+      vaapiVdpau
     ];
   };
 
   # AMD Microcode
-  hardware.cpu.amd.updateMicrocode = 
-	lib.mkDefault config.hardware.enableRedistributableFirmware;
+  hardware.cpu.amd.updateMicrocode =
+    lib.mkDefault config.hardware.enableRedistributableFirmware;
 
-#  # Load nvidia driver for Xorg and Wayland
-#  services.xserver.videoDrivers = ["nvidia"];
+  #  # Load nvidia driver for Xorg and Wayland
+  #  services.xserver.videoDrivers = ["nvidia"];
 
   hardware.nvidia = {
 
@@ -86,7 +87,7 @@
     open = true;
 
     # Enable the Nvidia settings menu,
-	# accessible via `nvidia-settings`.
+    # accessible via `nvidia-settings`.
     nvidiaSettings = true;
 
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
@@ -100,14 +101,14 @@
       openSha256 = "sha256-8hyRiGB+m2hL3c9MDA/Pon+Xl6E788MZ50WrrAGUVuY=";
       settingsSha256 = "sha256-ZpuVZybW6CFN/gz9rx+UJvQ715FZnAOYfHn5jt5Z2C8=";
       persistencedSha256 = "sha256-a1D7ZZmcKFWfPjjH1REqPM5j/YLWKnbkP9qfRyIyxAw=";
-    };    
+    };
 
     prime = {
       sync.enable = true;
       amdgpuBusId = "PCI:6:0:0";
       nvidiaBusId = "PCI:1:0:0";
     };
- };
+  };
 
   # specilisation
   specialisation = {
@@ -160,42 +161,42 @@
   };
 
 
-# default x11 + gnome settings
+  # default x11 + gnome settings
 
-#  # Enable the X11 windowing system.
-#  services.xserver.enable = true;
-#
-#  # Enable the GNOME Desktop Environment.
-#  services.xserver.displayManager.gdm.enable = true;
-#  services.xserver.desktopManager.gnome.enable = true;
-#
-#  # Configure keymap in X11
-#  services.xserver = {
-#    xkb.layout = "us";
-#    xkb.variant = "";
-#  };
+  #  # Enable the X11 windowing system.
+  #  services.xserver.enable = true;
+  #
+  #  # Enable the GNOME Desktop Environment.
+  #  services.xserver.displayManager.gdm.enable = true;
+  #  services.xserver.desktopManager.gnome.enable = true;
+  #
+  #  # Configure keymap in X11
+  #  services.xserver = {
+  #    xkb.layout = "us";
+  #    xkb.variant = "";
+  #  };
 
-# wayland - gnome settings
+  # wayland - gnome settings
   services = {
     # Ensure gnome-settings-daemon udev rules are enabled.
     udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
     xserver = {
-	enable = true;
-	displayManager = {
-	    gdm = {
-		enable = true;
-		wayland = true;
-	    };
-	};
-	# Enable Desktop Environment.
-        desktopManager.gnome.enable = true;
+      enable = true;
+      displayManager = {
+        gdm = {
+          enable = true;
+          wayland = true;
+        };
+      };
+      # Enable Desktop Environment.
+      desktopManager.gnome.enable = true;
 
-	# configuring keymaps in X11
-	xkb.layout = "us";
-	xkb.variant = "";
+      # configuring keymaps in X11
+      xkb.layout = "us";
+      xkb.variant = "";
 
-	# Load nvidia driver for Xorg and Wayland
-	videoDrivers = lib.mkDefault ["nvidia"];
+      # Load nvidia driver for Xorg and Wayland
+      videoDrivers = lib.mkDefault [ "nvidia" ];
 
     };
   };
@@ -210,10 +211,10 @@
   # change shell to zsh
   # programs.zsh.enable = true;
   # users.defaultUserShell = pkgs.zsh;  
-  
+
   # change shell to nushell
   # programs.nushell.enable = true;
-  users.defaultUserShell = pkgs.nushell;  
+  users.defaultUserShell = pkgs.nushell;
 
   # enabling git
   programs.git = {
@@ -257,7 +258,7 @@
     description = "bakayu";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-    #  thunderbird
+      #  thunderbird
     ];
     shell = pkgs.nushell;
   };
@@ -284,37 +285,26 @@
 
   environment.sessionVariables = {
     FLAKE = "/home/bakayu/nixfiles";
-    STEAM_EXTRA_COMPAT_TOOLS_PATHS =
-      "~/steam/root/compatibilitytools.d";
   };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
 
-  # installing steam
-  programs.steam.enable = true;
-  programs.steam.gamescopeSession.enable = true;
-  programs.gamemode.enable = true;
 
   # pkgs to fetch from stable branch
   environment.systemPackages = with pkgs; [
-    lutris
     google-chrome
-    bottles
-    mangohud
-    protonup
     pkgs-unstable.neovim
     pkgs-unstable.vscode
     direnv
     bootstrap-studio
-    pkgs-unstable.ollama-cuda
+    pkgs-unstable.ollama
     azure-cli
     kitty
     alacritty
     wezterm
     brave
     vivaldi
-    warp-terminal
     vivaldi-ffmpeg-codecs
     obs-studio
     element-desktop
@@ -357,6 +347,8 @@
     rustup
     zig
     nil
+    nixd
+    nixpkgs-fmt
     lazygit
     git-credential-oauth
     tree-sitter
@@ -372,7 +364,7 @@
     vlc
     pavucontrol
     krita
-    drawing 
+    drawing
     gimp
     pkgs-unstable.spicetify-cli
     xclip
@@ -397,14 +389,9 @@
     nix-output-monitor
     nvd
     transmission
-    qbittorrent
-    aria2
     foliate
     evince
-    zathura
-    kdePackages.okular
     calibre
-    persepolis
     p7zip
     unrar
     ffmpeg
@@ -421,7 +408,7 @@
     pkgs-unstable.eyewitness
     pkgs-unstable.nmap
     pkgs-unstable.ffuf
-  ];  
+  ];
 
 
   # Fonts
