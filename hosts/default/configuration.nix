@@ -20,12 +20,15 @@
       # nixos modules
       ../../modules/nixos/gnome.nix
       ../../modules/nixos/power.nix
-      ../../modules/nixos/battery.nix
       ../../modules/nixos/hardware.nix
       ../../modules/nixos/nvidia.nix
       # off load (on-the-go) config
       # ../../modules/nixos/nvidia-offload.nix
 
+
+      # services
+      ../../modules/services/battery.nix
+      ../../modules/services/wallpaper.nix
 
       # fonts
       ../../modules/fonts/fonts.nix
