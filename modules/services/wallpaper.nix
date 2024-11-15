@@ -6,7 +6,7 @@ let
 
     HOUR=$(date +%H)
 
-    if [ "$HOUR" -ge 6 ] && [ "$HOUR" -lt 18 ]; then
+    if [ "$HOUR" -ge 6 ] && [ "$HOUR" < 18 ]; then
       gsettings set org.gnome.desktop.background picture-uri 'file:///home/bakayu/data/media/fuji.png'
     else
       gsettings set org.gnome.desktop.background picture-uri 'file:///home/bakayu/data/media/fuji_dark.png'
@@ -16,17 +16,17 @@ in
 {
   systemd.services.switch-wallpaper = {
     description = "Switch GNOME wallpaper based on time";
-    execStart = "${switchWallpaper}";
-    user = "bakayu";
-    environment = {
-      DISPLAY = ":0";
+    serviceConfig = {
+      ExecStart = "${switchWallpaper}";
+      User = "bakayu";
+      Environment = "DISPLAY=:0";
       XAUTHORITY = "/home/bakayu/.Xauthority";
     };
+    wantedBy = [ "default.target" ];
   };
 
   systemd.timers.switch-wallpaper-timer = {
     description = "Timer to switch wallpaper every hour";
-    wantedBy = [ "timers.target" ];
     timerConfig = {
       OnCalendar = "hourly";
     };
@@ -34,5 +34,6 @@ in
       After = [ "graphical.target" ];
       Wants = [ "switch-wallpaper.service" ];
     };
+    wantedBy = [ "timers.target" ];
   };
 }
