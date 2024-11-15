@@ -5,7 +5,6 @@
     pkgs-unstable.neovim
     pkgs-unstable.vscode
     direnv
-    bootstrap-studio
     pkgs-unstable.ollama
     azure-cli
     kitty
@@ -18,9 +17,7 @@
     element-desktop
     slack
     whatsapp-for-linux
-    beeper
     vesktop
-    gradience
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     curl
@@ -96,10 +93,8 @@
     nh
     nix-output-monitor
     nvd
-    transmission
     foliate
     evince
-    calibre
     p7zip
     unrar
     ffmpeg
