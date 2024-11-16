@@ -28,7 +28,7 @@
 
       # services
       ../../modules/services/battery.nix
-      ../../modules/services/wallpaper.nix
+      # ../../modules/services/wallpaper.nix
 
       # fonts
       ../../modules/fonts/fonts.nix
