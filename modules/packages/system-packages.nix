@@ -3,7 +3,7 @@
   environment.systemPackages = with pkgs; [
     google-chrome
     pkgs-unstable.neovim
-    pkgs-unstable.vscode
+    pkgs-unstable.vscode-fhs
     direnv
     pkgs-unstable.ollama
     azure-cli
