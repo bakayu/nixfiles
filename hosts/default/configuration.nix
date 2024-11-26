@@ -35,7 +35,7 @@
 
       # packages
       ../../modules/packages/system-packages.nix
-      ../../modules/packages/nix-ld.nix
+      # ../../modules/packages/nix-ld.nix
       ../../modules/packages/git.nix
 
       # user

@@ -13,6 +13,7 @@
     just-perfection
     color-picker
     forge
+    cronomix
     # ...
   ];
 }

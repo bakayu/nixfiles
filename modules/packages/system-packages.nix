@@ -3,7 +3,7 @@
   environment.systemPackages = with pkgs; [
     google-chrome
     pkgs-unstable.neovim
-    pkgs-unstable.vscode-fhs
+    pkgs-unstable.vscode
     direnv
     pkgs-unstable.ollama
     azure-cli
@@ -36,6 +36,12 @@
     clang-tools
     opencv
     gtk3
+    gtk4
+    pkg-config
+    atk
+    cairo
+    pango
+    gdk-pixbuf
     llvmPackages.libcxxClang
     llvmPackages.libclc
     chromedriver
@@ -49,7 +55,6 @@
     nodejs_22
     go
     gopls
-    rustup
     zig
     nil
     nixd
