@@ -35,6 +35,7 @@
 
       # packages
       ../../modules/packages/system-packages.nix
+      ../../modules/packages/docker.nix
       # ../../modules/packages/nix-ld.nix
       ../../modules/packages/git.nix
 
