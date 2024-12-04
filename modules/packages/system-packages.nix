@@ -93,7 +93,7 @@
     nerdfetch
     lshw
     psmisc
-    gnome.gnome-tweaks
+    gnome-tweaks
     kdePackages.kdenlive
     nh
     nix-output-monitor
@@ -105,6 +105,7 @@
     ffmpeg
     conda
     obsidian
+    pdfarranger
     libreoffice-qt6-fresh
     libsForQt5.qt5ct
     onlyoffice-bin

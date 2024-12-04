@@ -3,7 +3,7 @@
   # wayland - gnome settings
   services = {
     # Ensure gnome-settings-daemon udev rules are enabled.
-    udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
+    udev.packages = with pkgs; [ gnome-settings-daemon ];
     xserver = {
       enable = true;
       displayManager = {

@@ -5,7 +5,6 @@
     arcmenu
     vitals
     caffeine
-    openweather
     gsconnect
     clipboard-indicator
     app-icons-taskbar

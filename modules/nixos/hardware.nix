@@ -4,13 +4,14 @@
   hardware.cpu.amd.updateMicrocode =
     lib.mkDefault config.hardware.enableRedistributableFirmware;
 
-  # Enable OpenGL
-  hardware.opengl = {
+  # graphics
+  hardware.graphics = {
     enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
+
+    enable32Bit = true;
     extraPackages = with pkgs; [
-      vaapiVdpau
+      nvidia-vaapi-driver
+      libvdpau-va-gl
     ];
   };
 
