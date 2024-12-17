@@ -4,6 +4,7 @@
     google-chrome
     pkgs-unstable.neovim
     pkgs-unstable.vscode
+    # pkgs-unstable.vscode-fhs
     direnv
     pkgs-unstable.ollama
     azure-cli
@@ -15,6 +16,7 @@
     vivaldi-ffmpeg-codecs
     obs-studio
     element-desktop
+    signal-desktop
     slack
     whatsapp-for-linux
     vesktop
@@ -26,6 +28,7 @@
     fastfetch
     cava
     ripgrep
+    fd
     zellij
     unzip
     gnumake
@@ -76,7 +79,6 @@
     krita
     drawing
     gimp
-    pkgs-unstable.spicetify-cli
     xclip
     zsh
     pkgs-unstable.nushell
@@ -109,8 +111,7 @@
     libreoffice-qt6-fresh
     libsForQt5.qt5ct
     onlyoffice-bin
-    osu-lazer
-    hub
+    # osu-lazer
     gh
     jq
     jetbrains-toolbox
