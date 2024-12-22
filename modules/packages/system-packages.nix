@@ -27,6 +27,7 @@
     neofetch
     fastfetch
     cava
+    charasay
     ripgrep
     fd
     zellij
