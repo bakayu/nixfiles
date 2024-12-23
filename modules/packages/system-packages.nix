@@ -28,6 +28,7 @@
     fastfetch
     cava
     charasay
+    showmethekey
     ripgrep
     fd
     zellij
