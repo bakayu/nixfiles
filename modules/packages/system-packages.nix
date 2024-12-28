@@ -31,7 +31,7 @@
     showmethekey
     ripgrep
     fd
-    zellij
+    pkgs-unstable.zellij
     unzip
     gnumake
     libgcc
