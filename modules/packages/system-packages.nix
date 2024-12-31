@@ -79,6 +79,7 @@
     vlc
     pavucontrol
     krita
+    pkgs-unstable.inkscape
     drawing
     gimp
     xclip

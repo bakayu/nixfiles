@@ -37,7 +37,7 @@
       ../../modules/packages/system-packages.nix
       ../../modules/packages/docker.nix
       # ../../modules/packages/distrobox.nix
-      # ../../modules/packages/nix-ld.nix
+      ../../modules/packages/nix-ld.nix
       ../../modules/packages/git.nix
 
       # user
