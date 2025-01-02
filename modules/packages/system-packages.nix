@@ -116,6 +116,7 @@
     onlyoffice-bin
     # osu-lazer
     gh
+    pkgs-unstable.act
     jq
     jetbrains-toolbox
     pkgs-unstable.eyewitness
