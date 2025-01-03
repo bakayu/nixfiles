@@ -68,6 +68,7 @@
     git-credential-oauth
     tree-sitter
     python3
+    pkgs-unstable.poetry
     go
     gopls
     delve
@@ -122,5 +123,8 @@
     pkgs-unstable.eyewitness
     pkgs-unstable.nmap
     pkgs-unstable.ffuf
+    openmodelica.omcompiler
+    openmodelica.omlibrary
+    # openmodelica.combined
   ];
 }
