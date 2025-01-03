@@ -123,8 +123,5 @@
     pkgs-unstable.eyewitness
     pkgs-unstable.nmap
     pkgs-unstable.ffuf
-    openmodelica.omcompiler
-    openmodelica.omlibrary
-    # openmodelica.combined
   ];
 }
